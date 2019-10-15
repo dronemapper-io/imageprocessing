@@ -1,5 +1,42 @@
 # README 
 
+### DroneMapper Changes
+
+* Created a jupyter notebook named `Batch Processing DroneMapper` to generate stacked TIFs while preserving original filenames and EXIF metadata.
+
+* Changed the GDAL output options in `capture.py` to `COMPRESS=None` and `PHOTOMETRIC=RGB`. Stacked TIFs can be directly loaded into [DroneMapper Rapid or Remote Expert](https://dronemapper.com) for Red, Green, Blue, NIR, RedEdge and Thermal Digital Elevation Model and Orthomosaic processing. 
+
+Orthomosaic output is a 6 BAND GeoTIFF and Alpha channel.
+
+![DEM](doc/MicaSense_DEM.PNG)
+Digital Elevation Model
+
+![RGB](doc/MicaSense_RGB.PNG)
+Red, Green, Blue
+
+![NGB](doc/MicaSense_NGB.PNG)
+NIR, Green, Blue
+
+![ReGB](doc/MicaSense_RedEdgeGB.PNG)
+RedEdge, Green, Blue
+
+![Thermal](doc/MicaSense_Thermal.png)
+Thermal
+
+* Original MicaSense Altum Example Data
+
+[MicaSense Altum Sample Data](https://www.micasense.com/altum-sample-data)
+
+* DroneMapper Processed DEM, Point Cloud and 6 Band Orthomosaic
+
+[DroneMapper Sample Data](https://dronemapper.com/sample_data)
+
+* Digital Elevation Model can be used for biomass estimation, plant height, canopy height, average plot height and other values. 
+
+* 6 BAND Orthomosaic can be used for NDVI, Thermal and many other band math calculations/formulas.
+
+* Processed results rendered with [GlobalMapper](https://bluemarblegeo.com).
+
 ### MicaSense RedEdge Image Processing Tutorials 
 
 This repository includes tutorials and examples for processing MicaSense RedEdge and Altum images into usable information using the python programming language.  The intended audience is researchers and developers with some software development experience that want to do their own image processing.  While a number of commercial tools fully support processing RedEdge data into reflectance maps, there are a number of reasons to process your own data, including controlling the entire radiometric workflow (for academic or publication reasons), pre-processing images to be used in a non-radiometric photogrammetry suite, or processing single sets of 5 images without building a larger map.
