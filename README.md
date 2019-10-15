@@ -6,6 +6,8 @@
 
 * Changed the GDAL output options in `capture.py` to `COMPRESS=None` and `PHOTOMETRIC=RGB`. Stacked TIFs can be directly loaded into [DroneMapper Rapid or Remote Expert](https://dronemapper.com) for Red, Green, Blue, NIR, RedEdge and Thermal Digital Elevation Model and Orthomosaic processing. 
 
+* Changed `imageutils.py` cv2.findTransformECC to `cc, warp_matrix = cv2.findTransformECC(grad1, grad2, warp_matrix, warp_mode, criteria, None, 1)`
+
 Orthomosaic output is a 6 BAND GeoTIFF and Alpha channel.
 
 ![DEM](doc/MicaSense_DEM.PNG)
